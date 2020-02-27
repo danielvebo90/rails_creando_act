@@ -1,0 +1,14 @@
+<h1>Actor</h1>
+<p><%= link_to  "Crear Actor", new_actor_path %></p>
+<%@actors.each do |actor|%>
+<img src="<%=actor.image_url%>" width="128" height="188">
+<h3><%=actor.name%></h3>
+<p> <%=actor.bio%> </p>
+<p><strong>Born Date: </strong><%=actor.birth_date%></p>
+<p><strong>Born Place: </strong><%=actor.birth_place%></p>
+<% if actor.alive == false %>
+<p><strong>Death Date: </strong><%=actor.death_date%></p>
+<p><strong>Death Place: </strong><%=actor.death_place%></p>
+<%end%>
+<hr>
+<%end%>
